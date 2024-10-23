@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PFC - Miguel Sala</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <!-- Botón modal de instrucciones -->
+      <button id="btn-instrucciones">Instrucciones</button>
+      <h1>GUESSR</h1>
+      <!-- Botón tipo toggle para cambiar entre modo claro y oscuro -->
+      <label class="switch">
+        <input type="checkbox" id="toggle-modo" />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <hr />
+
+    <!-- Tablero del juego -->
+    <div id="tablero-juego"></div>
+
+    <!-- Contenedor para el teclado en pantalla -->
+    <div id="teclado-cont">
+      <!-- Primera fila del teclado -->
+      <div class="primera-fila">
+        <button class="tecla">q</button>
+        <button class="tecla">w</button>
+        <button class="tecla">e</button>
+        <button class="tecla">r</button>
+        <button class="tecla">t</button>
+        <button class="tecla">y</button>
+        <button class="tecla">u</button>
+        <button class="tecla">i</button>
+        <button class="tecla">o</button>
+        <button class="tecla">p</button>
+      </div>
+      <!-- Segunda fila del teclado -->
+      <div class="segunda-fila">
+        <button class="tecla">a</button>
+        <button class="tecla">s</button>
+        <button class="tecla">d</button>
+        <button class="tecla">f</button>
+        <button class="tecla">g</button>
+        <button class="tecla">h</button>
+        <button class="tecla">j</button>
+        <button class="tecla">k</button>
+        <button class="tecla">l</button>
+      </div>
+      <!-- Tercera fila del teclado -->
+      <div class="tercera-fila">
+        <button class="tecla">Borrar</button>
+        <button class="tecla">z</button>
+        <button class="tecla">x</button>
+        <button class="tecla">c</button>
+        <button class="tecla">v</button>
+        <button class="tecla">b</button>
+        <button class="tecla">n</button>
+        <button class="tecla">m</button>
+        <button class="tecla">Enter</button>
+      </div>
+    </div>
+
+    <!-- Modal con instrucciones -->
+    <div id="modal-instrucciones" class="modal">
+      <div class="modal-content">
+        <!-- Botón de close en el modal -->
+        <span class="close">&times;</span>
+        <h2>Cómo Jugar</h2>
+        <p>Adivina la palabra aleatoria en 6 intentos.</p>
+        <ul>
+          <li>Cada intento debe ser una palabra válida de 5 letras.</li>
+          <li>
+            El color de las letras cambiará para mostrar cómo de cerca estás de
+            la palabra correcta.
+          </li>
+        </ul>
+        <h3>Ejemplos:</h3>
+        <!-- Ejemplo de palabra con letra correcta en la posición correcta -->
+        <div class="ejemplo">
+          <span class="caja-ejemplo verde">A</span>
+          <span class="caja-ejemplo">R</span>
+          <span class="caja-ejemplo">B</span>
+          <span class="caja-ejemplo">O</span>
+          <span class="caja-ejemplo">L</span>
+          <p>'A' está en la palabra y en la posición correcta.</p>
+        </div>
+        <!-- Ejemplo de palabra con letra correcta en la posición incorrecta -->
+        <div class="ejemplo">
+          <span class="caja-ejemplo amarilla">C</span>
+          <span class="caja-ejemplo">O</span>
+          <span class="caja-ejemplo">C</span>
+          <span class="caja-ejemplo">H</span>
+          <span class="caja-ejemplo">E</span>
+          <p>'C' está en la palabra pero en la posición incorrecta.</p>
+        </div>
+        <!-- Ejemplo de palabra con letra incorrecta -->
+        <div class="ejemplo">
+          <span class="caja-ejemplo gris">L</span>
+          <span class="caja-ejemplo">E</span>
+          <span class="caja-ejemplo">T</span>
+          <span class="caja-ejemplo">R</span>
+          <span class="caja-ejemplo">A</span>
+          <p>'L' no está en la palabra en ninguna posición.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enlace a JS para lógica del juego -->
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
